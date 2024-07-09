@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "email": "John@gmail.com",
+    "name": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "transactions": [
+      {
+        "createdAt": "2024-07-08T23:39:49.875Z",
+        "id": 321,
+        "pointsEarned": 9,
+        "pointsRedeemed": 0,
+        "price": 9.85,
+        "updatedAt": "2024-07-08T23:39:49.875Z",
+        "userId": 5
+      }
+    ]
+  }
+]
