@@ -145,7 +145,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                             if (path === "/" && item.href === "/") {
                                 return "Overview";
                             }
-                            if (item.href === "/") return;
+                            if (item.href === "/") return "";
                             return path.includes(item.href) ? item.label : null;
                         })}
                     </Typography>

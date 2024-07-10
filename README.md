@@ -63,7 +63,7 @@ To run the application, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone
+   git clone https://github.com/Hicham-BelHoucin/central-park.git
    ```
 
 2. Navigate to the project directory:
@@ -76,7 +76,7 @@ To run the application, follow these steps:
 
    ```bash
     npm install
-    npm start
+    npm run start
    ```
 
 4. Open the browser and navigate to `http://localhost:3000` to access the application.
