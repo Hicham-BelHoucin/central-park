@@ -29,13 +29,20 @@ const CustomersList = ({ customers }: { customers: Customer[] }) => {
             }}
         >
             <Title>Customer Points Earned Today</Title>
-            {customers.length > 0 ? (
-                customers.map((user: Customer, index: number) => (
-                    <CustomerBanner key={user.id} customer={user} />
-                ))
-            ) : (
-                <NotFound title="No customers found" width={200} />
-            )}
+            <Box sx={{
+                display: "grid",
+                gap: 2,
+                maxHeight: "500px",
+                overflowY: "auto",
+            }}>
+                {customers.length > 0 ? (
+                    customers.map((user: Customer, index: number) => (
+                        <CustomerBanner key={user.id} customer={user} />
+                    ))
+                ) : (
+                    <NotFound title="No customers found" width={200} />
+                )}
+            </Box>
         </Box>
     );
 };

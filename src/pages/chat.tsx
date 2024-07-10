@@ -54,6 +54,8 @@ const PromotionChat: React.FC = () => {
                     <FormGroup sx={{
                         display: "grid",
                         gap: 1,
+                        maxHeight: "500px",
+                        overflowY: "auto",
                     }}>
                         {
                             customers.length > 0 ? customers.map(customer => (
