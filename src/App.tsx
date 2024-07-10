@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { customersReceived } from './features/customers/customerSlice';
 import { Box, CircularProgress } from '@mui/material';
 import './App.css';
+import NotFound from './pages/not-found';
 
 function Loading() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/text-promotions" element={<PromotionChat />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         )}
       </Layout>
