@@ -48,7 +48,7 @@ The use case diagram outlines the interactions between Gunther and the reward sy
 
 ![image](./public/sequence-diagram.png)
 
-This diagram shows how a customer's transaction is processed in the reward system. When a customer makes a purchase, the transaction is recorded by the CustomerService. It then calculates the reward points through the TransactionService and saves the transaction details, including the earned points, into the database.
+This diagram shows two sequences of interactions between Gunther and the reward system. The first sequence involves recording a new transaction, calculating the reward points, and saving the transaction details in the database. The second sequence demonstrates how Gunther can view customer earnings and redeem points.
 
 ## API Endpoints
 
