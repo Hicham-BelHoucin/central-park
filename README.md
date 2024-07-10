@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+# Central Perk Reward System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project provides a conceptual overview and documentation for the Central Perk coffee shop's reward system. It includes the architecture explanation, data model diagram, and instructions for running the application.
 
-In the project directory, you can run:
+## Architecture and Design Decisions
 
-### `npm start`
+The project consists of frontend and backend components:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Frontend**: The user interface is developed using React.js with Typescript and MaterialUI for a responsive and intuitive dashboard. It interacts with the backend via RESTful APIs.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  - **Dashboard**: Displays customer information, points balance. It also allows the Gunther to see how many points has been earned and redeemed.
 
-### `npm test`
+  - **Customer Details**: Shows the customer's name, email, and total points earned. It also lists the transactions made by the customer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - **Responsive Design**: The frontend is designed to be responsive and mobile-friendly, ensuring a consistent user experience across devices.
 
-### `npm run build`
+- **Backend**: The backend system utilizes a layered architecture with a focus on scalability and maintainability:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - **Presentation Layer**: The API endpoints are designed using Java with Spring Boot framework, facilitating robust handling of HTTP requests and responses.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - **Service Layer**: Implements business logic for transaction recording, points calculation, and customer management.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - **Data Access Layer**: Integrates with MySQL database to persist customer, transaction and points data.
 
-### `npm run eject`
+  - **Validation**: Utilizes Java Bean Validation API to enforce data integrity and validate input parameters.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Data Model Diagram
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](./public/data-diagram.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The data model diagram illustrates the database schema for the reward system. It consists of three tables: `customer`, `transaction` and `points`. The `customer` table stores customer information such as id, name, email, and total points earned and redeemed. The `transaction` table records transaction details, including id, amount, date, earned points, and the customer id as a foreign key. The `points` table stores the points earned and redeemed by the customer, along with the userId id as a foreign key.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Class Diagram
 
-## Learn More
+![image](./public/class-diagram.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This diagram illustrates the class structure of the reward system. The Customer class represents the customer entity, which has attributes such as id, name, email, and points. The Transaction class represents the transaction entity, which has attributes such as id, amount, date, and earned points. The Points class represents the points entity, which has attributes such as id, and count. The CustomerService class provides methods to manage customer data, while the TransactionService class handles transaction-related operations and points class manages the points data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Use Case Diagram
+
+![image](./public/use-case-diagram.png)
+
+The use case diagram outlines the interactions between Gunther and the reward system. Gunther can view customer details, including their name, email, and total points earned. He can also record new transactions, calculate the reward points, and save the transaction details in the database. Additionally, Gunther can text the customer about new offers and promotions.
+
+## Sequence Diagram
+
+![image](./public/sequence-diagram.png)
+
+This diagram shows how a customer's transaction is processed in the reward system. When a customer makes a purchase, the transaction is recorded by the CustomerService. It then calculates the reward points through the TransactionService and saves the transaction details, including the earned points, into the database.
+
+## API Endpoints
+
+![image](./public/api-end-points-diagram.png)
+
+This diagram showcases the API endpoints for the reward system. The frontend, built with React, sends requests to the backend Spring Boot API, which validates the data before interacting with the MySQL database. Depending on the validation outcome, the API responds with either a 200 OK or a 400 Bad Request.
+
+## Running the Application
+
+To run the application, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd central-perk
+   ```
+
+3. Start the frontend server:
+
+   ```bash
+    npm install
+    npm start
+   ```
+
+4. Open the browser and navigate to `http://localhost:3000` to access the application.
