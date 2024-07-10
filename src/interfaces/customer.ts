@@ -7,6 +7,7 @@ interface Customer {
     lastname: string;
   };
   email: string;
+  transactions: Transaction[];
   pointsEarned: Points[];
   pointsRedeemed: Points[];
   createdAt: Date;
