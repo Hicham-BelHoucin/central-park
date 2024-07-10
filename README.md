@@ -10,7 +10,7 @@ The project consists of frontend and backend components:
 
 - **Frontend**: The user interface is developed using React.js with Typescript and MaterialUI for a responsive and intuitive dashboard. It interacts with the backend via RESTful APIs.
 
-  - **Dashboard**: Displays customer information, points balance. It also allows the Gunther to see how many points has been earned and redeemed.
+  - **Dashboard**: Displays customer information, points balance. It also allows Gunther to see how many points has been earned and redeemed.
 
   - **Customer Details**: Shows the customer's name, email, and total points earned. It also lists the transactions made by the customer.
 
@@ -36,7 +36,7 @@ The data model diagram illustrates the database schema for the reward system. It
 
 ![image](./public/class-diagram.png)
 
-This diagram illustrates the class structure of the reward system. The Customer class represents the customer entity, which has attributes such as id, name, email, and points. The Transaction class represents the transaction entity, which has attributes such as id, amount, date, and earned points. The Points class represents the points entity, which has attributes such as id, and count. The CustomerService class provides methods to manage customer data, while the TransactionService class handles transaction-related operations and points class manages the points data.
+This diagram illustrates the class structure of the reward system. The Customer class represents the customer entity, which has attributes such as id, name, email, and points. The Transaction class represents the transaction entity, which has attributes such as id, price, date. The Points class represents the points entity, which has attributes such as id, and count. The CustomerService class provides methods to manage customer data, while the TransactionService class handles transaction-related operations and points class manages the points data.
 
 ## Use Case Diagram
 
