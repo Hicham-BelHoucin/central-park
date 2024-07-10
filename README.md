@@ -72,11 +72,17 @@ To run the application, follow these steps:
    cd central-perk
    ```
 
-3. Start the frontend server:
+3. create .env file in the root directory and add the following environment variables:
+
+   ```bash
+   REACT_APP_API_URL=https://fakestoreapi.com
+   ```
+
+4. Start the frontend server:
 
    ```bash
     npm install
     npm run start
    ```
 
-4. Open the browser and navigate to `http://localhost:3000` to access the application.
+5. Open the browser and navigate to `http://localhost:3000` to access the application.
